@@ -22,7 +22,7 @@ export class InstrumentPriceService {
     return interval(2000)
             .pipe(
                 startWith(0),
-                switchMap(() => this.http.get(this.url+`/getLatestPrice?instrument=${instrumentName}`)
+                switchMap(() => this.http.get(this.url+`/getLatestPrice?instrumentName=${instrumentName}`)
             )
         ) as Observable<InstrumentDetails>
   }
