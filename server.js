@@ -42,7 +42,6 @@ app.get('/getAllPrices', function(req, res) {
 app.get('/getLatestPrice', function(req, res) {
   res.header('Access-Control-Allow-Origin', '*');
   const element = PRICES.find(item => item.instrumentName === req.query['instrumentName']);
-  console.log(element, 'bE');
   res.json(Object.assign(element || {}, {
     bid: String((Math.floor(Math.random() * 10)).toFixed(4)),
     ask: String((Math.floor(Math.random() * 20)).toFixed(4)),
